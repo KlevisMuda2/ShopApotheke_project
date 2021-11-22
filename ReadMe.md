@@ -3,7 +3,7 @@
 # Login functionality
 
 
-1. Add dependencies selenium-java, web driver manager(bonigarcia), cucumber-java, cucumber-junit.
+1. Added dependencies selenium-java, web driver manager(bonigarcia), cucumber-java, cucumber-junit.
    
    
 2. I used  `Page Object Model`  to simplify my framework because the design 
@@ -22,6 +22,11 @@
    And `runner` class as a trigger with tag @wip to run scenario. 
    
 
-   
+# Login Functionality test approach
+
+1. Verify if a user will be able to login with a valid username and valid password. 
+2. Verify if a user cannot login with a valid username and an invalid password.
+3. Verify the login page for both, when the field is blank and Submit button is clicked.
+4. Verify if the ‘Enter’ key of the keyboard is working correctly on the login page. (it is written in POM)
 
 

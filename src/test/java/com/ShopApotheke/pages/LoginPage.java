@@ -1,6 +1,7 @@
 package com.ShopApotheke.pages;
 
 import com.ShopApotheke.utilities.Driver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -30,12 +31,34 @@ public class LoginPage {
     @FindBy(id = "messages-error")
     public WebElement errorMessage;
 
-    //Method for login functionality
+    @FindBy(xpath = "(//span[@class='error-msg'])[1]")
+    public WebElement blankUsernameErrorMessage;
+
+    @FindBy(xpath = "(//span[@class='error-msg'])[2]")
+    public WebElement blankPasswordErrorMessage;
+
+    @FindBy(xpath = "//a[@data-qa-id='login-registration-password-reveal']")
+    public WebElement forgotPassword;
+
+    @FindBy(xpath = "(//p)[3]")
+    public WebElement forgotPasswordMessage;
+
+    @FindBy(id = "pw-email")
+    public WebElement forgotPasswordEmailField;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement forgotPasswordEmailSend;
+
+    /** Method for login functionality
+     * It runs by clicking on the login button or Pres Enter key from keyboard.
+     * @param username
+     * @param passwords
+     */
     public void loginFunctionality(String username, String passwords){
 
         email.sendKeys(username);
         password.sendKeys(passwords);
-        okButton.click();
-        loginButton.click();
+        password.sendKeys(Keys.ENTER);
+       // loginButton.click();
     }
 }
